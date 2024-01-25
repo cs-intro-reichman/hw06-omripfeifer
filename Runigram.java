@@ -155,23 +155,21 @@ public class Runigram {
 	 * The image is scaled (resized) to have the given width and height.
 	 */
 	public static Color[][] scaled(Color[][] image, int width, int height) {
-		
-		int imageWidth = image.length ;
-		int imageHeight = image[0].length;
-		double widthRatio = (double) imageWidth / width ;
-		double heightRatio = (double) imageHeight / height ;
-		
-		Color[][] scaledImage = new Color[height][width];
-		
-		for (int i = 0 ; i < height ; i++ ){
-			for (int j = 0 ; j < width ; j++ ){
-				 
-				scaledImage[i][j] = image [(int) (i * heightRatio)] [(int)(j * widthRatio)]; 
-				 
-			}
-		}
-		return scaledImage ;
-	}
+        int h0 = image.length;
+        int w0 = image[0].length;
+
+        Color[][] scaledImage = new Color[height][width];
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                int sourceI = (int) (i * ((double) h0 / height));
+                int sourceJ = (int) (j * ((double) w0 / width));
+                scaledImage[i][j] = image[sourceI][sourceJ];
+            }
+        }
+
+        return scaledImage;
+    }
 	
 	/**
 	 * Computes and returns a blended color which is a linear combination of the two given
