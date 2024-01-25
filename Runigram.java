@@ -197,8 +197,8 @@ public class Runigram {
 	 */
 	public static Color[][] blend(Color[][] image1, Color[][] image2, double alpha) {
 		
-		int imageWidth =  Math.max(image1.length ,image2.length) ;
-		int imageHeight =  Math.max (image1[0].length , image2[0].length) ;  
+		int imageWidth = image1.length  ;
+		int imageHeight =  image1[0].length ;  
 		Color[][] blendedImage = new Color[imageWidth][imageHeight] ;
 
 		for( int i = 0 ; i < imageWidth ; i++ ){
@@ -206,7 +206,7 @@ public class Runigram {
 
 				Color c1 = image1[i][j]; 
 				Color c2 = image2[i][j]; 
-				
+
 				blendedImage[i][j] = blend(c1, c2, alpha); 
 			}
 		}
