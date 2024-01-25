@@ -17,10 +17,11 @@ public class Runigram {
 		// image processing operations:
 		Color[][] imageOut;
 
-		
-		imageOut = grayScaled(tinypic);
-		System.out.println();
-		print(imageOut);
+
+		// Tests the horizontal flipping of an image:
+        imageOut = flippedHorizontally(tinypic);
+        System.out.println();
+        print(imageOut);
 		
 		//// Write here whatever code you need in order to test your work.
 		//// You can reuse / overide the contents of the imageOut array.
@@ -89,7 +90,7 @@ public class Runigram {
 
 		for (int i = 0 ; i < rows ; i++ ){
 			for (int j = columns - 1 ; j >= 0 ; j-- ){
-				imageFlipHorizo[i][columns - 1- j ] = image [i][j]; 
+				imageFlipHorizo[i][j] = image [i][columns - 1- j]; 
 			}
 		}
 
@@ -126,7 +127,7 @@ public class Runigram {
 		// new gray color 
 
 		Color grayColor = new Color (lum, lum, lum );
-		pixel.getRed();
+		
 		return grayColor;
 	}
 	
