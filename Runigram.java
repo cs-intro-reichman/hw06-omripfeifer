@@ -17,8 +17,8 @@ public class Runigram {
 		// image processing operations:
 		Color[][] imageOut;
 
-		// Tests the horizontal flipping of an image:
-		imageOut = flippedVertically(tinypic);
+		
+		imageOut = grayScaled(tinypic);
 		System.out.println();
 		print(imageOut);
 		
