@@ -161,7 +161,7 @@ public class Runigram {
 		double widthRatio = (double) imageWidth / width ;
 		double heightRatio = (double) imageHeight / height ;
 		
-		Color[][] scaledImage = new Color[width][height];
+		Color[][] scaledImage = new Color[height][width];
 		
 		for (int i = 0 ; i < height ; i++ ){
 			for (int j = 0 ; j < width ; j++ ){
