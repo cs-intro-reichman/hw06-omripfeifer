@@ -203,7 +203,11 @@ public class Runigram {
 
 		for( int i = 0 ; i < imageWidth ; i++ ){
 			for (int j = 0 ; j < imageHeight ; j++ ){
-				blendedImage[i][j] = blend(image1[i][j], image2[i][j] , alpha )  ; 
+
+				Color c1 = image1[i][j]; 
+				Color c2 = image2[i][j]; 
+				
+				blendedImage[i][j] = blend(c1, c2, alpha); 
 			}
 		}
 		
